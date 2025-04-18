@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Arquivo 1</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div>
+            <h1>Título Nível 1</h1>
+            <p>Teste 1</p>
+            <p>Teste 2</p>
+            <p class="paragrafo">Teste 3</p>
+            <p id="titulo">Teste 4</p>
+        </div>
+        <script type="text/javascript">
+            
+            // Colhendo dados contidos nas tags <p> e as colocando em uma "lista".
+            var elementos_p = document.getElementsByTagName('p')
+
+            // Printando o conteúdo da "lista" elementos_p e as exibindo no console (Inspecionar -> Console).
+            console.log(elementos_p);
+            
+            // Colocando os elementos da lista em variáveis separadas, "p_1" e "p_2".
+            var p_1 = elementos_p[0];
+            var p_2 = elementos_p[1];
+
+            // Estilizando a variável "p_1".
+            p_1.style.background="red";
+            p_1.style.fontSize="20pt";
+
+            // Estilizando a variável "p_2".
+            p_2.style.background="yellow";
+            p_2.innerText = "O VITOR É BRABO DEMAIS!";
+            
+            // Alterando diretamente o HTML usando o comando "document.write", acrescentando as variáveis ao site.
+            document.write(p_2.innerHTML);
+            document.write('<h2>GALERA TOP </h2>');
+
+            // Colhendo dados contidos nas tags <h2> e as colocando em uma "lista".
+            var elementos_h2 = document.getElementsByTagName('h2')
+
+            // Alterando o estilo do elemento diretamente usando o índice.
+            elementos_h2[0].style.background="blue";
+                
+            // Criando a variável "p_3" com o elemento de indíce 0 da lista que contém elementos que utilizam a classe "paragrafo".
+            var p_3 = document.getElementsByClassName("paragrafo")[0];
+
+            // Estilizando a variável "p_3".
+            p_3.style.background="green";
+            p_3.style.color="#fff";
+                
+            // Criando a variável "p_4" com o elemento que contém o ID "titulo", e a estilizando.
+            var p_4 = document.getElementById('titulo');
+            p_4.style.background="purple";
+            p_4.style.fontSize="40pt";
+
+        </script>
+    </body>
+</html>

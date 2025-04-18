@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Exercício 2</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="exercicios.css">
+    </head>
+    <body>
+        <h1>amongus</h1>
+        <img id="amongus1" src="../Aula 2/imagens/amongus-a.png" onmouseover="oi();" onmouseleave="tchau();">
+        <script type="text/javascript">
+            function oi() {
+                var imagem = document.getElementById('amongus1')
+                imagem.src="../Aula 2/imagens/amongus-b.gif";
+                imagem.id="amongus2"
+            }
+            function tchau() {
+                var imagem = document.getElementById('amongus2')
+                imagem.src="../Aula 2/imagens/amongus-a.png";
+                imagem.id="amongus1"
+            }
+        </script>
+    </body>
+</html>

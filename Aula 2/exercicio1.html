@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Exercício 1</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>Somar números!</h1>
+        <input type="number" id="num1" class="nums" placeholder="Digite o 1º número">
+        <span>+</span>
+        <input type="number" id="num2"class="nums" placeholder="Digite o 2º número">
+        <button onclick="somar();">Somar</button>
+        <div>
+            <p>O resultado é: <span id="resultado"></span></p>
+        </div>
+        <script type="text/javascript">
+            function somar() {
+                var numeros = document.getElementsByClassName('nums');
+                var num1 = Number(numeros[0].value)
+                var num2 = Number(numeros[1].value)
+                var soma = num1 + num2
+                document.getElementById('resultado').innerText = soma
+            }
+        </script>
+    </body>
+</html>
