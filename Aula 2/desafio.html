@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Desafio!</title>
+        <meta name="description" content="Desafio proposto aos alunos pelo Profº Gregorio">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="exercicios.css">
+    </head>
+    <body>
+        <h1>Relógio Visual</h1>
+        <time id="horario"></time>
+        <figure id="periodo"><img id="foto" class="fotosperiodos"></figure>
+        <script type="text/javascript">
+            const horas = new Date();
+            relogio = document.getElementById('horario')
+            relogio.innerText = (`Agora são ${horas.getHours()}:${horas.getMinutes()} :)`);
+            var imagem = document.getElementById('periodo');
+            if (horas.getHours() >= 6 && horas.getHours() <= 11) {
+                imagem.innerHTML = "<img id='foto' class='fotosperiodos' src='./imagens/manha.png'>";
+                console.log(imagem)
+            }
+            else if (horas.getHours() >= 12 && horas.getHours() <= 17) {
+                imagem.innerHTML = "<img id='foto' class='fotosperiodos' src='./imagens/tarde.png'>";
+                console.log(imagem)
+            }
+            else if (horas.getHours() >= 18 && horas.getHours() <= 23) {
+                imagem.innerHTML = "<img id='foto' class='fotosperiodos' src='./imagens/noite.png'>";
+                console.log(imagem)
+            }
+            else {
+                imagem.innerHTML = "<img id='foto' class='fotosperiodos' src='./imagens/madrugada.png'>";
+                console.log(imagem)
+            }
+        </script>
+    </body>
+</html>
