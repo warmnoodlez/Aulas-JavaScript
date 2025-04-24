@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Desafio!</title>
+        <meta name="description" content="Desafio proposto aos alunos pelo Profº Gregorio">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="exercicios.css">
+    </head>
+    <body id="pag">
+
+        <h1 id="saudacao"></h1>
+        <time id="horario"></time>
+        <figure id="periodo"><img id="foto" class="fotosperiodos"></figure>
+
+        <script type="text/javascript">
+            const horas = new Date();
+
+            var relogio = document.querySelector("#horario");
+            relogio.innerText = (`Agora são ${horas.getHours()}:${horas.getMinutes()}...`);
+            relogio.style.backgroundColor = "white";
+            relogio.style.fontSize = "25px";
+            relogio.style.borderRadius = "10px 10px";
+            relogio.style.fontFamily = "Arial, sans-serif";
+            relogio.style.padding = "5px";
+
+            var ola = document.querySelector("#saudacao");
+            ola.style.backgroundColor = "white";
+            ola.style.fontSize = "30px";
+            ola.style.borderRadius = "10px 10px";
+            ola.style.fontFamily = "Arial, sans-serif";
+            ola.style.padding = "5px";
+            ola.style.marginRight = "87%";
+            ola.style.textAlign = "center";
+
+            var fundo = document.querySelector("#pag");
+            fundo.style.backgroundSize = "cover";
+
+            if (horas.getHours() >= 6 && horas.getHours() <= 11) {
+                fundo.style.backgroundImage = "url('imagens/manha.jpg')";
+                ola.innerText = "Bom dia!";
+            }
+            else if (horas.getHours() >= 12 && horas.getHours() <= 17) {
+                fundo.style.backgroundImage = "url('imagens/tarde.jpg')";
+                ola.innerText = "Boa tarde!";
+            }
+            else if (horas.getHours() >= 18 && horas.getHours() <= 23) {
+                fundo.style.backgroundImage = "url('imagens/noite.jpg')";
+                ola.innerText = "Boa noite!";
+            }
+            else {
+                fundo.style.backgroundImage = "url('imagens/madrugada.jpg')";
+                ola.innerText = "Bons sonhos!";
+            }
+        </script>
+
+    </body>
+</html>

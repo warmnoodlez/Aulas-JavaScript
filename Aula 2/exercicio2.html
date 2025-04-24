@@ -10,18 +10,20 @@
     </head>
     <body>
         <h1>amongus</h1>
-        <img id="amongus1" src="../Aula 2/imagens/amongus-a.png" onmouseover="oi();" onmouseleave="tchau();">
+        <img id="amongus" src="../Aula 2/imagens/amongus-a.png"">
         <script type="text/javascript">
+            var imagem = document.getElementById('amongus')
+            imagem.style.width = "300px"
             function oi() {
-                var imagem = document.getElementById('amongus1')
-                imagem.src="../Aula 2/imagens/amongus-b.gif";
-                imagem.id="amongus2"
+                imagem.src = "imagens/amongus-b.gif";
             }
             function tchau() {
-                var imagem = document.getElementById('amongus2')
-                imagem.src="../Aula 2/imagens/amongus-a.png";
-                imagem.id="amongus1"
+                imagem.src = "imagens/amongus-a.png"
             }
+            imagem.addEventListener("mouseenter", oi);
+            imagem.addEventListener("mouseleave", tchau);
+            imagem.addEventListener("touchstart", oi);
+            imagem.addEventListener("touchend", tchau);
         </script>
     </body>
 </html>
