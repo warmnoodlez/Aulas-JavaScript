@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Exercício 4</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>Tabuada</h1>
+        <input id="caixa" type="number" placeholder="Informe o nº para a tabuada">
+        <button id="botao" type="button" onclick="gerartabuada()">Criar Tabuada</button>
+        <p id="tabuada"></p>
+        <script type="text/javascript">
+            var p = document.querySelector("#tabuada");
+            const elmts = [];
+            function gerartabuada() {
+                var num = p.value;
+                for (let i=1; i<11; i++) {
+                    var res = num*i
+                    elmts.push(res)
+                }
+            }
+            console.log(elmts)
+        </script>
+    </body>
+</html>
