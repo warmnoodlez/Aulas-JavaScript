@@ -12,18 +12,22 @@
         <h1>Tabuada</h1>
         <input id="caixa" type="number" placeholder="Informe o nº para a tabuada">
         <button id="botao" type="button" onclick="gerartabuada()">Criar Tabuada</button>
-        <p id="tabuada"></p>
+        <ul id="tabuada">
+        </ul>
         <script type="text/javascript">
-            var p = document.querySelector("#tabuada");
-            const elmts = [];
             function gerartabuada() {
-                var num = p.value;
+                var mult = document.querySelector("#caixa");
+                var num = Number(mult.value);
+                if (document.querySelector("#tabuada") != "") {
+                    document.querySelector("#tabuada").innerHTML = ""
+                }
                 for (let i=1; i<11; i++) {
-                    var res = num*i
-                    elmts.push(res)
+                    var lista = document.createElement("li");
+                    let resultado = num*i;
+                    lista.innerHTML = `${num} X ${i} = ${resultado}`
+                    document.querySelector("#tabuada").appendChild(lista)
                 }
             }
-            console.log(elmts)
         </script>
     </body>
 </html>
