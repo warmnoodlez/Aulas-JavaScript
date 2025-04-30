@@ -8,12 +8,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-    <input id="valor"  type="number" placeholder="Informe o número final da sequência">
-    <button id="botao" type="button" onclick="">Criar sequência</button>
+        <h1>Sequências!</h1>
+        <input id="valori"  type="number" placeholder="Informe o número inicial">
+        <input id="valorf"  type="number" placeholder="Informe o número final">
+        <button id="botao" type="button" onclick="sequencia()">Criar sequência</button>
+        <p id="seq"></p>
         <script type="text/javascript">
             function sequencia() {
-                var valor = document.querySelector("#valor")
-                var 
+                var valor1 = Number(document.querySelector("#valori").value)
+                var valor2 = Number(document.querySelector("#valorf").value)
+                for (let i=valor1;i<valor2) {
+                    
+                }
             }
         </script>
     </body>
