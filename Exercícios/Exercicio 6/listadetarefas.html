@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Exercício 6</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="estilo.css">
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <h1>Lista de Tarefas</h1>
+        <hr>
+        <button id="botaocriar">Criar Tarefa</button>
+        <hr class="inv">
+        <div class="containers">
+            <div id="menucriar" class="menus">
+                <form>
+                    <label for="nome">Insira o nome da tarefa:</label>
+                    <input id="nome" type="text"><br>
+                    <label for="opcoes1">Escolha um nível de urgência:</label>
+                    <select id="opcoes1">
+                        <option></option>
+                        <option value="0">Não Urgente</option>
+                        <option value="1">Pouco Urgente</option>
+                        <option value="2">Urgente</option>
+                        <option value="3">Muito Urgente</option>
+                    </select><br>
+                    <label for="opcoes2">Escolha uma categoria de tarefa:</label>
+                    <select id="opcoes2">
+                        <option></option>
+                    </select><br>
+                        <button id="botaoconcluir" class="concluir" type="button" onclick="criartarefa()">Concluir</button> 
+                </form>
+            </div>
+        </div>
+       
+        
+        
+        <script type="text/javascript">
+            // Elementos HTML
+            var botaocriar = document.querySelector("#botaocriar");
+            var menucriar = document.querySelector("#menucriar");
+            var botaoconcluir = document.querySelector("#botaoconcluir");
+
+            // Disparaadores
+            botaocriar.addEventListener('click', abrirmenucriar);
+            botaoconcluir.addEventListener('click', )
+
+
+            // Funções
+            function abrirmenucriar() {
+                menucriar.style.display = menucriar.style.display === 'block' ? 'none' : 'block';
+            }
+            function criartarefa(){
+                
+            }
+            function criarcategoria(){
+
+            }
+        </script>
+    </body>
+</html>

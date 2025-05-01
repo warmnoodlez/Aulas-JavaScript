@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Exercício 5</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            div {
+                white-space: normal
+            }
+            hr {
+                visibility: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Sequências!</h1>
+        <hr>
+        <div>
+            <form>
+                <input id="valori"  type="number" placeholder="Informe o número inicial">
+                <input id="valorf"  type="number" placeholder="Informe o número final">
+                <button id="botao" type="button" onclick="sequencia()">Criar sequência</button>
+            </form>
+        </div> 
+        <hr>
+        <div id="para"></div>
+        <script type="text/javascript">
+            function sequencia() {
+                var valor1 = Number(document.querySelector("#valori").value)
+                var valor2 = Number(document.querySelector("#valorf").value)
+                if (document.querySelector("p") != "") {
+                    document.querySelector("#para").innerHTML = ""
+                }
+                for (let i=valor1;i<(valor2+1);i++) {
+                    if (i!=valor2){
+                        var seq = document.createElement("text");
+                        seq.innerHTML = `${i}, `
+                        document.querySelector("#para").appendChild(seq)
+                    }
+                    else {
+                        var seq = document.createElement("text");
+                        seq.innerHTML = `${i}.`
+                        document.querySelector("#para").appendChild(seq)
+                    }    
+                }
+            }
+        </script>
+    </body>
+</html>

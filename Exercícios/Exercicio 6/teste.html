@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Suspenso</title>
+    <style>
+        /* Estilos para o botão */
+        .btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Estilos para o menu suspenso */
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Estilos para os campos do menu */
+        .dropdown input {
+            width: 200px;
+            padding: 8px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .dropdown label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botão que abre o menu -->
+    <button class="btn" id="openMenuBtn">Abrir Menu</button>
+
+    <!-- Menu suspenso com formulário -->
+    <div class="dropdown" id="dropdownMenu">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" placeholder="Digite seu nome">
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
+
+        <button class="btn" id="submitBtn">Enviar</button>
+    </div>
+
+    <script>
+        // Referências aos elementos
+        const openMenuBtn = document.getElementById('openMenuBtn');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        const submitBtn = document.getElementById('submitBtn');
+
+        // Abre/fecha o menu quando o botão é clicado
+        openMenuBtn.addEventListener('click', function() {
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Ação para enviar os dados (simplesmente mostra os dados no console)
+        submitBtn.addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            console.log('Nome:', name);
+            console.log('E-mail:', email);
+        });
+    </script>
+
+</body>
+</html>

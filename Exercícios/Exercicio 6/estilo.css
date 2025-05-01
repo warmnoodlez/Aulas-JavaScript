@@ -1,0 +1,31 @@
+/* Elementos HTML */
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input {
+    margin: 5px;
+}
+
+hr {
+    visibility: hidden;
+}
+
+/* Classes */
+.containers {
+    display: flex;
+}
+
+.titles {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.menus {
+    display: none;
+    border-radius: 25px;
+    background-color: aqua;
+    padding: 1%; 
+}
+
+/* IDs */
