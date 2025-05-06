@@ -24,8 +24,23 @@ hr {
 .menus {
     display: none;
     border-radius: 25px;
-    background-color: aqua;
     padding: 1%; 
 }
 
+.menus.menu1 {
+    background-color: aqua;
+}
+
+.menus.menu2 {
+    background-color: chartreuse;
+}
+
 /* IDs */
+
+#menucriar1 {
+    display: none;
+}
+
+#menucriar2 {
+    display: none;
+}

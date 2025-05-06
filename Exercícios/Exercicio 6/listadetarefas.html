@@ -14,13 +14,14 @@
     <body>
         <h1>Lista de Tarefas</h1>
         <hr>
-        <button id="botaocriar">Criar Tarefa</button>
+        <button id="criartarefa">Criar Tarefa</button>
+        <button id="criarcategoria">Criar Categoria</button>
         <hr class="inv">
         <div class="containers">
-            <div id="menucriar" class="menus">
+            <div id="menucriar1">
                 <form>
-                    <label for="nome">Insira o nome da tarefa:</label>
-                    <input id="nome" type="text"><br>
+                    <label for="nome1">Insira o nome da tarefa:</label>
+                    <input id="nome1" type="text"><br>
                     <label for="opcoes1">Escolha um nível de urgência:</label>
                     <select id="opcoes1">
                         <option></option>
@@ -33,7 +34,17 @@
                     <select id="opcoes2">
                         <option></option>
                     </select><br>
-                        <button id="botaoconcluir" class="concluir" type="button" onclick="criartarefa()">Concluir</button> 
+                        <button id="concluirtarefa" class="concluir" type="button" onclick="criartarefa()">Concluir</button> 
+                </form>
+            </div>
+            
+            <div id="menucriar2">
+                <form>
+                    <label for="nome2">Insira o nome da categoria:</label>
+                    <input id="nome2" type="text"><br>
+                    <label for="roleta1">Escolha a cor para a categoria:</label>
+                    <input id="corcategoria" type="color"><br>
+                    <button id="concluircategoria" class="concluir" type="button" onclick="criarcategoria()">Concluir</button> 
                 </form>
             </div>
         </div>
@@ -41,18 +52,20 @@
         
         
         <script type="text/javascript">
+
             // Elementos HTML
-            var botaocriar = document.querySelector("#botaocriar");
-            var menucriar = document.querySelector("#menucriar");
-            var botaoconcluir = document.querySelector("#botaoconcluir");
+            // Criar Tarefa
+            var criartarefa = document.querySelector("#criartarefa");
+            var concluirtarefa = document.querySelector("#concluirtarefa");
+            // Criar Categoria
+            var criarcategoria = document.querySelector("#criarcategoria")
+            var corcategoria = document.querySelector("#corcategoria");
+            var concluircategoria = document.querySelector("#concluircategoria")
 
-            // Disparaadores
-            botaocriar.addEventListener('click', abrirmenucriar);
-            botaoconcluir.addEventListener('click', )
-
-
-            // Funções
-            function abrirmenucriar() {
+             // Funções
+            function abrirmenutar() {
+                let menucriar = document.getElementById("menucriar1");
+                menucriar.classList.add("menus", "menu1");
                 menucriar.style.display = menucriar.style.display === 'block' ? 'none' : 'block';
             }
             function criartarefa(){
@@ -61,6 +74,19 @@
             function criarcategoria(){
 
             }
+            function abrirmenucat() {
+                let menucriar = document.getElementById("menucriar2")
+                menucriar.classList.add("menus", "menu2");
+                menucriar.style.display = menucriar.style.display === 'block' ? 'none' : 'block';
+            }
+            // Disparaadores
+            criartarefa.addEventListener('click', abrirmenutar);
+            //concluirtarefa.addEventListener('click', );
+            criarcategoria.addEventListener('click', abrirmenucat)
+
+
+           
+            
         </script>
     </body>
 </html>
