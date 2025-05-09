@@ -12,55 +12,87 @@
         </style>
     </head>
     <body>
-        <h1>Lista de Tarefas</h1>
+        <!-- Título interno da página -->
+        <h1>Lista de Tarefa</h1>
         <hr>
-        <button id="criartarefa">Criar Tarefa</button>
-        <button id="criarcategoria">Criar Categoria</button>
-        <hr class="inv">
+
+        <!-- Seleção de funcionalidades -->
+        <button id="criartarbtn">Criar Tarefa</button>
+        <button id="criarcatgbtn">Criar Categoria</button>
+        <hr>
+        
+        <!-- Estrutura dos menus -->
         <div class="containers">
+
+            <!-- Forumulário de criação da tar -->
             <div id="menucriar1">
                 <form>
+                    <!-- Criar nome da tar -->
                     <label for="nome1">Insira o nome da tarefa:</label>
                     <input id="nome1" type="text"><br>
+
+                    <!-- Selecionar nível de urgência da tar -->
                     <label for="opcoes1">Escolha um nível de urgência:</label>
                     <select id="opcoes1">
                         <option></option>
-                        <option value="0">Não Urgente</option>
-                        <option value="1">Pouco Urgente</option>
-                        <option value="2">Urgente</option>
-                        <option value="3">Muito Urgente</option>
+                        <option value="Não Urgente">Não Urgente</option>
+                        <option value="Pouco Urgente">Pouco Urgente</option>
+                        <option value="Urgente">Urgente</option>
+                        <option value="Muito Urgente">Muito Urgente</option>
                     </select><br>
-                    <label for="opcoes2">Escolha uma categoria de tarefa:</label>
+
+                    <!-- Selecionar catg da tar -->
+                    <label for="opcoes2">Escolha uma categoria para a tarefa:</label>
                     <select id="opcoes2">
                         <option></option>
                     </select><br>
-                        <button id="concluirtarefa" class="concluir" type="button" onclick="criartarefa()">Concluir</button> 
+
+                    <!-- Botão de concluir a criação da tar -->
+                    <button id="concluirtar" class="concluir" type="button">Concluir</button> 
                 </form>
             </div>
             
+            <!-- Forumlário das catgs -->
             <div id="menucriar2">
                 <form>
+                    <!-- Criar nome da catg -->
                     <label for="nome2">Insira o nome da categoria:</label>
                     <input id="nome2" type="text"><br>
+
+                    <!-- Seleção de cor da catg -->
                     <label for="roleta1">Escolha a cor para a categoria:</label>
-                    <input id="corcategoria" type="color"><br>
-                    <button id="concluircategoria" class="concluir" type="button" onclick="criarcategoria()">Concluir</button> 
+                    <input id="roleta1" type="color"><br>
+
+                    <!-- Botão de concluir a criação da catg -->
+                    <button id="concluircatg" class="concluir" type="button">Concluir</button> 
                 </form>
             </div>
         </div>
+
+        <h2>Suas Tarefas</h2>
+        <hr>
+        <div id="tarefas"></div>
        
         
-        
+        <!-- Início do script em Javascript -->
         <script type="text/javascript">
 
-            // Elementos HTML
-            // Criar Tarefa
-            var criartarefa = document.querySelector("#criartarefa");
-            var concluirtarefa = document.querySelector("#concluirtarefa");
-            // Criar Categoria
-            var criarcategoria = document.querySelector("#criarcategoria")
-            var corcategoria = document.querySelector("#corcategoria");
-            var concluircategoria = document.querySelector("#concluircategoria")
+            // Elementos HTML - Criar tarefa
+            var criartarbtn = document.querySelector("#criartarbtn");
+            var concluirtar = document.querySelector("#concluirtar");
+
+            // Elementos HTML - Criar categoria
+            var criarcatgbtn = document.querySelector("#criarcatgbtn");
+            var concluircatg = document.querySelector("#concluircatg");
+
+            // Elementos HTML - Tarefas
+            var tarefas = document.querySelector("#tarefas");
+
+            // Eventos
+            criartarbtn.addEventListener('click', abrirmenutar);
+            concluirtar.addEventListener('click', criartar);
+            criarcatgbtn.addEventListener('click', abrirmenucat);
+            concluircatg.addEventListener('click', criarcatg);
 
              // Funções
             function abrirmenutar() {
@@ -68,25 +100,33 @@
                 menucriar.classList.add("menus", "menu1");
                 menucriar.style.display = menucriar.style.display === 'block' ? 'none' : 'block';
             }
-            function criartarefa(){
+            function criartar() {
+                let nome = String(document.querySelector("#nome1").value);
+                let sel1 = document.querySelector("#opcoes1");
+                let urg = sel1.options[sel1.selectedIndex].value;
+                let sel2 = document.querySelector("#opcoes2");
+                let cat = sel2.options[sel2.selectedIndex].value;
+                
+                let numtarefas = tarefas.getElementsByTagName("div").length;
+                for (let i=0; i<numtarefas+1; i++){
+                    let novatarefa = tarefas.createElement("div");
+                    novatarefa.innerHTML = '<label for></label><input id class="tarefa" type="checkbox">'
+                }
                 
             }
-            function criarcategoria(){
-
+            function criarcatg() {
+                let nome = String(document.querySelector("#nome2").value);
+                let cor = document.querySelector("#roleta1").value;
+                
+                const tarefa = document.createElement("input");
+                tarefa.setAttribute(id, "tarefa");
             }
             function abrirmenucat() {
-                let menucriar = document.getElementById("menucriar2")
+                let menucriar = document.getElementById("menucriar2");
                 menucriar.classList.add("menus", "menu2");
                 menucriar.style.display = menucriar.style.display === 'block' ? 'none' : 'block';
             }
-            // Disparaadores
-            criartarefa.addEventListener('click', abrirmenutar);
-            //concluirtarefa.addEventListener('click', );
-            criarcategoria.addEventListener('click', abrirmenucat)
 
-
-           
-            
         </script>
     </body>
 </html>

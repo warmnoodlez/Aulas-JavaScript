@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Geocodificação Reversa</title>
+</head>
+<body>
+  <h2>Buscar Endereço por Coordenadas</h2>
+  
+  <label>Latitude: <input type="text" id="lat" value="-23.550520"></label><br>
+  <label>Longitude: <input type="text" id="lon" value="-46.633308"></label><br><br>
+  
+  <button onclick="buscarEndereco()">Buscar Endereço</button>
+  
+  <h3>Endereço:</h3>
+  <p id="resultado"></p>
+
+  <script>
+    function buscarEndereco() {
+      const lat = document.getElementById("lat").value;
+      const lon = document.getElementById("lon").value;
+
+      const url = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`;
+
+      fetch(url, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (SeuApp)',
+          'Referer': 'https://seusite.com'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        const endereco = data.display_name || "Endereço não encontrado.";
+        document.getElementById("resultado").textContent = endereco;
+      })
+      .catch(error => {
+        console.error("Erro ao buscar endereço:", error);
+        document.getElementById("resultado").textContent = "Erro ao buscar endereço.";
+      });
+    }
+  </script>
+</body>
+</html>
