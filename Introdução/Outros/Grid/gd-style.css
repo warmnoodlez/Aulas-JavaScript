@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    align-content: space-around ;
+}
+
+#logo {
+    margin: 10px;
+    width: 50px;
+}
+
+#navegacao {
+    display: flex;
+    background-color: lightseagreen;
+}
+
